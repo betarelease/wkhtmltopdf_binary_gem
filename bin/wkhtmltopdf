@@ -11,9 +11,9 @@ require 'rbconfig'
 
 file_name = case RbConfig::CONFIG['host']
 when /x86_64.*linux/
-  'wkhtmltox-0.12.2.1_linux-trusty-amd64.deb'
+  'wkhtmltopdf_linux'
 when /darwin/
-  'wkhtmltox-0.12.2.1_osx-cocoa-x86-64.pkg'
+  'wkhtmltopdf_osx'
 else
   raise "Invalid platform. Must be running on ubuntu or intel-based Mac OS."
 end
