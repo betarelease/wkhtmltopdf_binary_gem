@@ -9,13 +9,13 @@
 
 require 'rbconfig'
 
-file_name = case RbConfig::CONFIG['host']
+suffix = case RbConfig::CONFIG['host']
 when /x86_64.*linux/
-  'wkhtmltopdf_linux'
+  'linux'
 when /darwin/
-  'wkhtmltopdf_osx'
+  'osx'
 else
   raise "Invalid platform. Must be running on ubuntu or intel-based Mac OS."
 end
 
-system *$*.unshift("#{file_name}")
+system *$*.unshift("#{__FILE__}_#{suffix}")
